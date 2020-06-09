@@ -1,0 +1,32 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "particle": "#ore"
+    },
+    "elements": [
+        {
+            "from":[0,0,0],
+            "to":[16,16,16],
+            "faces": {
+                "up":    {"texture": "#substrate", "cullface": "up"},
+                "down":  {"texture": "#substrate", "cullface": "down"},
+                "north": {"texture": "#substrate", "cullface": "north"},
+                "east":  {"texture": "#substrate", "cullface": "east"},
+                "south": {"texture": "#substrate", "cullface": "south"},
+                "west":  {"texture": "#substrate", "cullface": "west"}
+            }
+        },
+        {
+            "from":[0,0,0],
+            "to":[16,16,16],
+            "faces": {
+                "up":    {"texture": "#ore", "cullface": "up"},
+                "down":  {"texture": "#ore", "cullface": "down"},
+                "north": {"texture": "#ore", "cullface": "north"},
+                "east":  {"texture": "#ore", "cullface": "east"},
+                "south": {"texture": "#ore", "cullface": "south"},
+                "west":  {"texture": "#ore", "cullface": "west"}
+            }
+        }
+    ]
+}

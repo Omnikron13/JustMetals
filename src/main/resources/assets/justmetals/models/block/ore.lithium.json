@@ -1,0 +1,7 @@
+{
+    "parent": "justmetals:block/ore",
+    "textures": {
+        "substrate": "minecraft:blocks/stone_granite",
+        "ore": "justmetals:blocks/ore.lithium"
+    }
+}
