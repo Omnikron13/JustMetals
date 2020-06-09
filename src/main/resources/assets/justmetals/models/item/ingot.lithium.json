@@ -1,0 +1,6 @@
+{
+    "parent": "justmetals:item/ingot",
+    "textures": {
+        "metal": "justmetals:items/ingot.lithium"
+    }
+}

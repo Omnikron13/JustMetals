@@ -17,6 +17,7 @@ public final class JustMetals {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         new OreBlock("lithium", 1);
+        new IngotItem("lithium");
     }
     
     @Mod.EventHandler

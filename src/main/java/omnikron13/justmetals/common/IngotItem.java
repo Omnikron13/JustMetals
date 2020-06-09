@@ -1,0 +1,39 @@
+package omnikron13.justmetals.common;
+
+import java.util.ArrayList;
+import java.util.List;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent.Register;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+@EventBusSubscriber
+public class IngotItem extends Item {
+    protected static List<Item> Items = new ArrayList<Item>();
+    
+    public IngotItem(String name) {
+        setUnlocalizedName("ingot." + name);
+        setRegistryName("ingot." + name);
+        setCreativeTab(CreativeTabs.MISC);
+        Items.add(this);
+    }
+    
+    @SubscribeEvent
+    public static void registerItems(Register<Item> event) {
+        for(Item i : Items) {
+            event.getRegistry().register(i);
+        }
+    }
+    
+    @SubscribeEvent
+	public static void registerRenders(ModelRegistryEvent event) {
+        for(Item i : Items) {
+            ModelResourceLocation mrl = new ModelResourceLocation(i.getRegistryName(), "inventory");
+            ModelLoader.setCustomModelResourceLocation(i, 0, mrl);
+        }
+	}
+}
