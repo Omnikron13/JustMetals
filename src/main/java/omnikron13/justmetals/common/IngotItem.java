@@ -10,12 +10,17 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.StringUtils;
 
 @EventBusSubscriber
 public class IngotItem extends Item {
-    protected static List<Item> Items = new ArrayList<Item>();
+    protected static List<IngotItem> Items = new ArrayList<IngotItem>();
+    
+    protected String name;
     
     public IngotItem(String name) {
+        this.name = name;
         setUnlocalizedName("ingot." + name);
         setRegistryName("ingot." + name);
         setCreativeTab(CreativeTabs.MISC);
@@ -24,8 +29,9 @@ public class IngotItem extends Item {
     
     @SubscribeEvent
     public static void registerItems(Register<Item> event) {
-        for(Item i : Items) {
+        for(IngotItem i : Items) {
             event.getRegistry().register(i);
+            OreDictionary.registerOre("ingot" + StringUtils.capitalize(i.name), i);
         }
     }
     
