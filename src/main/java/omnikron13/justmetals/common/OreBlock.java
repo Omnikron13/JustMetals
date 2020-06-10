@@ -40,14 +40,14 @@ public class OreBlock extends Block {
     
     @SubscribeEvent
     public static void registerBlocks(Register<Block> event) {   
-        for(Block b : Blocks) {
+        for(OreBlock b : Blocks) {
             event.getRegistry().register(b);
         }
     }
     
     @SubscribeEvent
     public static void registerItemBlocks(Register<Item> event) {
-        for(Block b : Blocks) {
+        for(OreBlock b : Blocks) {
             Item ib = new ItemBlock(b).setRegistryName(b.getRegistryName());
             event.getRegistry().register(ib);
             ItemBlocks.add(ib);
