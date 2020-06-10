@@ -1,7 +1,5 @@
 package omnikron13.justmetals.common;
 
-import java.util.ArrayList;
-import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -17,6 +15,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @EventBusSubscriber
 public class OreBlock extends Block {
