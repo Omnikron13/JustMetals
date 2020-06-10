@@ -11,12 +11,14 @@ public class Metal {
     
     public Block ore;
     public Item ingot;
+    public Item nugget;
     
     public Metal(String name, int mining_level, float smeltingXP) {
         this.name = name;
         this.smeltingXP = smeltingXP;
         ore = new OreBlock(name, mining_level);
         ingot = new IngotItem(name);
+        nugget = new NuggetItem(name);
     }
     
     public Metal(String name, int mining_level) {
