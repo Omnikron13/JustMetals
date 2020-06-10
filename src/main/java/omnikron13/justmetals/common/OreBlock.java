@@ -16,6 +16,8 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.StringUtils;
 
 @EventBusSubscriber
 public class OreBlock extends Block {
@@ -26,8 +28,11 @@ public class OreBlock extends Block {
     protected static List<OreBlock> Blocks = new ArrayList<OreBlock>();
     protected static List<Item> ItemBlocks = new ArrayList<Item>();
     
+    protected String name;
+    
     public OreBlock(String name, int mining_level) {
         super(Material.ROCK);
+        this.name = name;
         setRegistryName("ore." + name);
         setUnlocalizedName("ore." + name);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -51,6 +56,7 @@ public class OreBlock extends Block {
             Item ib = new ItemBlock(b).setRegistryName(b.getRegistryName());
             event.getRegistry().register(ib);
             ItemBlocks.add(ib);
+            OreDictionary.registerOre("ore" + StringUtils.capitalize(b.name), ib);
         }
     }
     
