@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [{
+        "type": "forge:ore_dict",
+        "ore": "blockLithium"
+    }],
+    "result": {
+        "item": "justmetals:ingot.lithium",
+        "count": 9
+    }
+}

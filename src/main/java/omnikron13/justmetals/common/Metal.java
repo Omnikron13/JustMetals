@@ -8,8 +8,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class Metal {
     protected String name;
     protected float smeltingXP;
-    
+
     public Block ore;
+    public Block block;
     public Item ingot;
     public Item nugget;
     
@@ -17,6 +18,7 @@ public class Metal {
         this.name = name;
         this.smeltingXP = smeltingXP;
         ore = new OreBlock(name, mining_level);
+        block = new MetalBlock(name, mining_level);
         ingot = new IngotItem(name);
         nugget = new NuggetItem(name);
     }
