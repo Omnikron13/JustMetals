@@ -13,6 +13,7 @@ public class Metal {
     public Block block;
     public Item ingot;
     public Item nugget;
+    public Item dust;
     
     public Metal(String name, int mining_level, float smeltingXP) {
         this.name = name;
@@ -21,6 +22,7 @@ public class Metal {
         block = new MetalBlock(name, mining_level);
         ingot = new IngotItem(name);
         nugget = new NuggetItem(name);
+        dust = new DustItem(name);
     }
     
     public Metal(String name, int mining_level) {
@@ -29,5 +31,6 @@ public class Metal {
     
     public void registerSmeltingRecipes() {
         GameRegistry.addSmelting(ore, new ItemStack(ingot, 1), smeltingXP);
+        GameRegistry.addSmelting(dust, new ItemStack(ingot, 1), smeltingXP);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "justmetals:item/dust",
+  "textures": {
+    "base": "justmetals:items/dust/base/granite",
+    "metal": "justmetals:items/dust/lithium"
+  }
+}
