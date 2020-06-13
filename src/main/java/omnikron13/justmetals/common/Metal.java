@@ -14,6 +14,7 @@ public class Metal {
     public Item ingot;
     public Item nugget;
     public Item dust;
+    public MoltenFluid moltenFluid;
     
     public Metal(String name, int mining_level, float smeltingXP) {
         this.name = name;
@@ -23,6 +24,7 @@ public class Metal {
         ingot = new IngotItem(name);
         nugget = new NuggetItem(name);
         dust = new DustItem(name);
+        moltenFluid = new MoltenFluid(name);
     }
     
     public Metal(String name, int mining_level) {

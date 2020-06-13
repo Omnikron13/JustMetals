@@ -1,5 +1,6 @@
 package omnikron13.justmetals.common;
 
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -18,7 +19,11 @@ public final class JustMetals {
     
     @Instance
     public static JustMetals instance;
-    
+
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         Metals.add(new Metal("lithium", 1));
