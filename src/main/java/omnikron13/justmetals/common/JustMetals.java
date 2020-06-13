@@ -26,7 +26,7 @@ public final class JustMetals {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        Metals.add(new Metal("lithium", 1));
+        Metals.add(new Metal("lithium", 1, 1, 545, 512, 1000));
     }
     
     @Mod.EventHandler

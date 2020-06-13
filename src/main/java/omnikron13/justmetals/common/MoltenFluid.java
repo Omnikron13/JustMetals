@@ -22,7 +22,7 @@ public class MoltenFluid extends Fluid {
 
     protected String name;
 
-    public MoltenFluid(String name) {
+    public MoltenFluid(String name, int temperature, int density, int viscosity) {
         super(
             "molten." + name,
             new ResourceLocation(JustMetals.MODID, "fluids/molten." + name + ".still"),
@@ -31,6 +31,9 @@ public class MoltenFluid extends Fluid {
         this.name = name;
         setColor(0xFFFFFFFF);
         setGaseous(false);
+        setTemperature(temperature);
+        setDensity(density);
+        setViscosity(viscosity);
         Fluids.add(this);
     }
 

@@ -16,7 +16,7 @@ public class Metal {
     public Item dust;
     public MoltenFluid moltenFluid;
     
-    public Metal(String name, int mining_level, float smeltingXP) {
+    public Metal(String name, int mining_level, float smeltingXP, int moltenTemperature, int moltenDensity, int moltenViscosity) {
         this.name = name;
         this.smeltingXP = smeltingXP;
         ore = new OreBlock(name, mining_level);
