@@ -1,10 +1,12 @@
 package omnikron13.justmetals.common;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
@@ -37,6 +39,8 @@ public class MoltenFluid extends Fluid {
         for(MoltenFluid f : Fluids) {
             FluidRegistry.registerFluid(f);
             FluidRegistry.addBucketForFluid(f);
+            f.setBlock(new BlockFluidClassic(f, Material.LAVA).setRegistryName("molten." + f.name));
+            event.getRegistry().register(f.getBlock());
         }
     }
 
