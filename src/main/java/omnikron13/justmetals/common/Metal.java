@@ -24,11 +24,7 @@ public class Metal {
         ingot = new IngotItem(name);
         nugget = new NuggetItem(name);
         dust = new DustItem(name);
-        moltenFluid = new MoltenFluid(name);
-    }
-    
-    public Metal(String name, int mining_level) {
-        this(name, mining_level, 1.0f);
+        moltenFluid = new MoltenFluid(name, moltenTemperature, moltenDensity, moltenViscosity);
     }
     
     public void registerSmeltingRecipes() {
