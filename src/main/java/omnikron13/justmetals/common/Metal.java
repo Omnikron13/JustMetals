@@ -9,11 +9,11 @@ public class Metal {
     protected String name;
     protected float smeltingXP;
 
-    public Block ore;
-    public Block block;
-    public Item ingot;
-    public Item nugget;
-    public Item dust;
+    public OreBlock ore;
+    public MetalBlock block;
+    public IngotItem ingot;
+    public NuggetItem nugget;
+    public DustItem dust;
     public MoltenFluid moltenFluid;
     
     public Metal(String name, int mining_level, float smeltingXP, int moltenTemperature, int moltenDensity, int moltenViscosity) {
