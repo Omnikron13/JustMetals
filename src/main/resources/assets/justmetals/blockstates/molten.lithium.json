@@ -1,13 +1,31 @@
 {
     "forge_marker": 1,
     "defaults": {
-        "model": "forge:fluid"
+        "model": "forge:fluid",
+        "textures": {
+            "all": "justmetals:fluids/molten.lithium.flowing"
+        },
+        "custom": { "fluid": "molten.lithium" }
     },
     "variants": {
-        "normal": [{
-            "custom": {
-                "fluid": "molten.lithium"
-            }
-        }]
+        "normal": [{}],
+        "level": {
+            "0": { },
+            "1": { },
+            "2": { },
+            "3": { },
+            "4": { },
+            "5": { },
+            "6": { },
+            "7": { },
+            "8": { },
+            "9": { },
+            "10": { },
+            "11": { },
+            "12": { },
+            "13": { },
+            "14": { },
+            "15": { }
+        }
     }
 }
