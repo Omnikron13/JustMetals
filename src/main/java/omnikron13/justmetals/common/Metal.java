@@ -56,6 +56,17 @@ public class Metal {
         Recipes.add(r);
     }
 
+    protected void addBlockRecipe() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        OreIngredient ingotDict = new OreIngredient("ingot" + StringUtils.capitalize(name));
+        for(int n = 0; n < 9; n++) {
+            ingredients.add(ingotDict);
+        }
+        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":block." + name, new ItemStack(block.itemBlock, 1), ingredients);
+        r.setRegistryName(JustMetals.MODID, "block." + name);
+        Recipes.add(r);
+    }
+
     protected void addIngotFromBlockRecipe() {
         NonNullList<Ingredient> ingredients = NonNullList.create();
         ingredients.add(new OreIngredient("block" + StringUtils.capitalize(name)));
