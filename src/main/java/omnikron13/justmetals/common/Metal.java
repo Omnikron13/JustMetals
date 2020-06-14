@@ -3,8 +3,21 @@ package omnikron13.justmetals.common;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreIngredient;
+import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Mod.EventBusSubscriber
 public class Metal {
     protected String name;
     protected float smeltingXP;
@@ -15,6 +28,8 @@ public class Metal {
     public NuggetItem nugget;
     public DustItem dust;
     public MoltenFluid moltenFluid;
+
+    public static List<IRecipe> Recipes = new ArrayList<>();
     
     public Metal(String name, int mining_level, float smeltingXP, int moltenTemperature, int moltenDensity, int moltenViscosity) {
         this.name = name;
@@ -25,10 +40,26 @@ public class Metal {
         nugget = new NuggetItem(name);
         dust = new DustItem(name);
         moltenFluid = new MoltenFluid(name, moltenTemperature, moltenDensity, moltenViscosity);
+        addNuggetRecipe();
     }
     
     public void registerSmeltingRecipes() {
         GameRegistry.addSmelting(ore, new ItemStack(ingot, 1), smeltingXP);
         GameRegistry.addSmelting(dust, new ItemStack(ingot, 1), smeltingXP);
+    }
+
+    protected void addNuggetRecipe() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        ingredients.add(new OreIngredient("ingot" + StringUtils.capitalize(name)));
+        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":nugget", new ItemStack(nugget, 9), ingredients);
+        r.setRegistryName(JustMetals.MODID, "nugget." + name);
+        Recipes.add(r);
+    }
+
+    @SubscribeEvent
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        for(IRecipe r : Recipes) {
+            event.getRegistry().register(r);
+        }
     }
 }
