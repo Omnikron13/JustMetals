@@ -47,6 +47,7 @@ public class Metal {
         GameRegistry.addSmelting(dust, new ItemStack(ingot, 1), smeltingXP);
     }
 
+    // TODO: refactor for code reuse
     protected void addNuggetRecipe() {
         NonNullList<Ingredient> ingredients = NonNullList.create();
         ingredients.add(new OreIngredient("ingot" + StringUtils.capitalize(name)));
