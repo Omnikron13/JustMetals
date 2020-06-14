@@ -1,3 +1,6 @@
 {
-    "parent": "justmetals:block/plate.lithium"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "justmetals:blocks/block.lithium"
+    }
 }
