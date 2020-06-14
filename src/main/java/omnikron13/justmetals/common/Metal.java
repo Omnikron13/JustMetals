@@ -38,13 +38,18 @@ public class Metal {
         nugget = new NuggetItem(name);
         dust = new DustItem(name);
         moltenFluid = new MoltenFluid(name, moltenTemperature, moltenDensity, moltenViscosity);
-        addNuggetRecipe();
-        addIngotFromBlockRecipe();
+        addRecipes();
     }
     
     public void registerSmeltingRecipes() {
         GameRegistry.addSmelting(ore, new ItemStack(ingot, 1), smeltingXP);
         GameRegistry.addSmelting(dust, new ItemStack(ingot, 1), smeltingXP);
+    }
+
+    protected void addRecipes() {
+        addNuggetRecipe();
+        addBlockRecipe();
+        addIngotFromBlockRecipe();
     }
 
     // TODO: refactor for code reuse
