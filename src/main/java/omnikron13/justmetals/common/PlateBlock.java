@@ -37,17 +37,21 @@ public class PlateBlock extends Block {
 
     protected String name;
 
-    public PlateBlock(String name, int mining_level) {
+    public PlateBlock(String name, int mining_level, float hardness, float blast_resistance) {
         super(Material.IRON);
         this.name = name;
         setRegistryName(TYPE + "." + name);
         setUnlocalizedName(TYPE + "." + name);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
         setSoundType(SoundType.METAL);
-        setHardness(HARDNESS);
-        setResistance(BLAST_RESISTANCE);
+        setHardness(hardness);
+        setResistance(blast_resistance);
         setHarvestLevel(TOOL, mining_level);
         Blocks.add(this);
+    }
+
+    public PlateBlock(String name, int mining_level) {
+        this(name, mining_level, HARDNESS, BLAST_RESISTANCE);
     }
 
     @SubscribeEvent
