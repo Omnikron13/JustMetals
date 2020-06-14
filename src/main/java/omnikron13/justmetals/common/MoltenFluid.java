@@ -34,6 +34,8 @@ public class MoltenFluid extends Fluid {
         setTemperature(temperature);
         setDensity(density);
         setViscosity(viscosity);
+        // This pegs lava (1473k) at 15, and mercury (room temperature, 20c/293k) at 0
+        setLuminosity(Math.round((temperature-293)/79));
         Fluids.add(this);
     }
 
