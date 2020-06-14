@@ -1,6 +1,6 @@
 {
-    "parent": "justmetals:item/ingot",
+    "parent": "item/generated",
     "textures": {
-        "metal": "justmetals:items/ingot.lithium"
+        "layer0": "justmetals:items/ingot.lithium"
     }
 }

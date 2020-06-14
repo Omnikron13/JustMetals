@@ -1,6 +1,6 @@
 {
-    "parent": "justmetals:item/nugget",
+    "parent": "item/generated",
     "textures": {
-        "metal": "justmetals:items/nugget.lithium"
+        "layer0": "justmetals:items/nugget.lithium"
     }
 }
