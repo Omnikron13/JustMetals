@@ -50,6 +50,7 @@ public class Metal {
         addNuggetRecipe();
         addBlockRecipe();
         addIngotFromBlockRecipe();
+        addIngotFromNuggetRecipe();
     }
 
     // TODO: refactor for code reuse
@@ -77,6 +78,17 @@ public class Metal {
         ingredients.add(new OreIngredient("block" + StringUtils.capitalize(name)));
         ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":ingot." + name + ".fromblock", new ItemStack(ingot, 9), ingredients);
         r.setRegistryName(JustMetals.MODID, "ingot." + name + ".fromblock");
+        Recipes.add(r);
+    }
+
+    protected void addIngotFromNuggetRecipe() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        OreIngredient ingotDict = new OreIngredient("nugget" + StringUtils.capitalize(name));
+        for(int n = 0; n < 9; n++) {
+            ingredients.add(ingotDict);
+        }
+        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":ingot." + name + ".fromnugget", new ItemStack(ingot, 1), ingredients);
+        r.setRegistryName(JustMetals.MODID, "block." + name + ".fromnugget");
         Recipes.add(r);
     }
 
