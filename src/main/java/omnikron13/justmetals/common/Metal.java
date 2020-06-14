@@ -19,9 +19,10 @@ import java.util.List;
 public class Metal {
     protected String name;
     protected float smeltingXP;
-
+    
     public OreBlock ore;
     public MetalBlock block;
+    public PlateBlock plate;
     public IngotItem ingot;
     public NuggetItem nugget;
     public DustItem dust;
@@ -34,6 +35,7 @@ public class Metal {
         this.smeltingXP = smeltingXP;
         ore = new OreBlock(name, mining_level);
         block = new MetalBlock(name, mining_level);
+        plate = new PlateBlock(name, mining_level);
         ingot = new IngotItem(name);
         nugget = new NuggetItem(name);
         dust = new DustItem(name);

@@ -1,0 +1,9 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "justmetals:plate.lithium"
+    },
+    "variants": {
+        "normal": [{}]
+    }
+}
