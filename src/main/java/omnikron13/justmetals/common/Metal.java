@@ -41,6 +41,7 @@ public class Metal {
         dust = new DustItem(name);
         moltenFluid = new MoltenFluid(name, moltenTemperature, moltenDensity, moltenViscosity);
         addNuggetRecipe();
+        addIngotFromBlockRecipe();
     }
     
     public void registerSmeltingRecipes() {
@@ -53,6 +54,14 @@ public class Metal {
         ingredients.add(new OreIngredient("ingot" + StringUtils.capitalize(name)));
         ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":nugget." + name, new ItemStack(nugget, 9), ingredients);
         r.setRegistryName(JustMetals.MODID, "nugget." + name);
+        Recipes.add(r);
+    }
+
+    protected void addIngotFromBlockRecipe() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        ingredients.add(new OreIngredient("block" + StringUtils.capitalize(name)));
+        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":ingot." + name + ".fromblock", new ItemStack(ingot, 9), ingredients);
+        r.setRegistryName(JustMetals.MODID, "ingot." + name + ".fromblock");
         Recipes.add(r);
     }
 
