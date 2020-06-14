@@ -51,7 +51,7 @@ public class Metal {
     protected void addNuggetRecipe() {
         NonNullList<Ingredient> ingredients = NonNullList.create();
         ingredients.add(new OreIngredient("ingot" + StringUtils.capitalize(name)));
-        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":nugget", new ItemStack(nugget, 9), ingredients);
+        ShapelessRecipes r = new ShapelessRecipes(JustMetals.MODID + ":nugget." + name, new ItemStack(nugget, 9), ingredients);
         r.setRegistryName(JustMetals.MODID, "nugget." + name);
         Recipes.add(r);
     }
