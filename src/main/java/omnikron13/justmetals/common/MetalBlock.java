@@ -22,7 +22,6 @@ import java.util.List;
 @EventBusSubscriber
 public class MetalBlock extends Block {
     public static final String TYPE = "block";
-    //public static final float HARDNESS = 3f;
     public static final float HARDNESS = 1.5f;
     public static final float BLAST_RESISTANCE = 3f;
     public static final String TOOL = "pickaxe";
