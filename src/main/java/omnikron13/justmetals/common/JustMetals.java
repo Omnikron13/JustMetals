@@ -28,6 +28,7 @@ public final class JustMetals {
     public void preInit(FMLPreInitializationEvent event) {
         // TODO: Work out proper viscosity
         Metals.add(new Metal("lithium", 1, 1, 545, 512, 1500));
+        Metals.add(new Metal("tungsten", 3, 2, 3695, 17600, 2500));
     }
     
     @Mod.EventHandler
