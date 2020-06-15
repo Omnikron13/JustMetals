@@ -37,8 +37,8 @@ public class IngotItem extends Item {
     
     @SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
-        for(Item i : Items) {
-            ModelResourceLocation mrl = new ModelResourceLocation(i.getRegistryName(), "inventory");
+        for(IngotItem i : Items) {
+            ModelResourceLocation mrl = new ModelResourceLocation(JustMetals.MODID + ":" + i.name + "/ingot", "inventory");
             ModelLoader.setCustomModelResourceLocation(i, 0, mrl);
         }
 	}

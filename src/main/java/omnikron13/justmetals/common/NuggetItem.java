@@ -40,8 +40,8 @@ public class NuggetItem extends Item {
     
     @SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
-        for(Item i : Items) {
-            ModelResourceLocation mrl = new ModelResourceLocation(i.getRegistryName(), "inventory");
+        for(NuggetItem i : Items) {
+            ModelResourceLocation mrl = new ModelResourceLocation(JustMetals.MODID + ":" + i.name + "/nugget", "inventory");
             ModelLoader.setCustomModelResourceLocation(i, 0, mrl);
         }
 	}

@@ -40,8 +40,8 @@ public class DustItem extends Item {
     
     @SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
-        for(Item i : Items) {
-            ModelResourceLocation mrl = new ModelResourceLocation(i.getRegistryName(), "inventory");
+        for(DustItem i : Items) {
+            ModelResourceLocation mrl = new ModelResourceLocation(JustMetals.MODID + ":" + i.name + "/dust", "inventory");
             ModelLoader.setCustomModelResourceLocation(i, 0, mrl);
         }
 	}
