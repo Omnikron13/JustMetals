@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import mods.railcraft.api.crafting.Crafters;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +44,13 @@ public final class JustMetals {
 
     @Mod.EventHandler
     public void postInit(FMLInitializationEvent event) {
-        Crafters.rollingMachine().newRecipe(new ItemStack(Metals.get(0).plate, 4)).shaped(
-            "XX",
-                "XX",
-                "X", "ingotLithium"
-        );
+        // TODO: move this into a better place
+        for(Metal m : Metals) {
+            Crafters.rollingMachine().newRecipe(new ItemStack(m.plate, 4)).shaped(
+                    "II",
+                    "II",
+                    'I', "ingot" + StringUtils.capitalize(m.name)
+            );
+        }
     }
 }
