@@ -1,11 +1,14 @@
 package omnikron13.justmetals.common;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import mods.railcraft.api.crafting.Crafters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,5 +39,14 @@ public final class JustMetals {
         for(Metal m : Metals) {
             m.registerSmeltingRecipes();
         }
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLInitializationEvent event) {
+        Crafters.rollingMachine().newRecipe(new ItemStack(Metals.get(0).plate, 4)).shaped(
+            "XX",
+                "XX",
+                "X", "ingotLithium"
+        );
     }
 }
