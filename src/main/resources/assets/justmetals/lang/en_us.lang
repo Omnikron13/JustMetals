@@ -5,3 +5,11 @@ item.ingot.lithium.name=Lithium Ingot
 item.nugget.lithium.name=Lithium Nugget
 item.dust.lithium.name=Lithium Grit
 fluid.molten.lithium=Molten Lithium
+
+tile.ore.tungsten.name=Tungsten Ore
+tile.block.tungsten.name=Block of Tungsten
+tile.plate.tungsten.name=Tungsten Plate
+item.ingot.tungsten.name=Tungsten Ingot
+item.nugget.tungsten.name=Tungsten Nugget
+item.dust.tungsten.name=Tungsten Grit
+fluid.molten.tungsten=Molten Tungsten
