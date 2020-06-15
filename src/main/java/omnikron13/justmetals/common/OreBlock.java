@@ -21,6 +21,7 @@ import java.util.List;
 
 @EventBusSubscriber
 public class OreBlock extends Block {
+    public static final String TYPE = "ore";
     public static final float HARDNESS = 3f;
     public static final float BLAST_RESISTANCE = 3f;
     public static final String TOOL = "pickaxe";
