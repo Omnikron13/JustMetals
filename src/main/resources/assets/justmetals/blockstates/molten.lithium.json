@@ -3,7 +3,7 @@
     "defaults": {
         "model": "forge:fluid",
         "textures": {
-            "all": "justmetals:fluids/molten.lithium.flowing"
+            "all": "justmetals:fluids/lithium/molten.flowing"
         },
         "custom": { "fluid": "molten.lithium" }
     },

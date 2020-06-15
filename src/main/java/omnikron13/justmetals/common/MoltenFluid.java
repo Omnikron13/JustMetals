@@ -25,8 +25,8 @@ public class MoltenFluid extends Fluid {
     public MoltenFluid(String name, int temperature, int density, int viscosity) {
         super(
             "molten." + name,
-            new ResourceLocation(JustMetals.MODID, "fluids/molten." + name + ".still"),
-            new ResourceLocation(JustMetals.MODID, "fluids/molten." + name + ".flowing")
+            new ResourceLocation(JustMetals.MODID, "fluids/" + name + "/still"),
+            new ResourceLocation(JustMetals.MODID, "fluids/" + name + "/flowing")
         );
         this.name = name;
         setColor(0xFFFFFFFF);
