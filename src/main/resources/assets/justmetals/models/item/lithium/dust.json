@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "justmetals:items/dust/base/granite",
-        "layer1": "justmetals:items/dust/lithium"
+        "layer0": "justmetals:items/dust/granite",
+        "layer1": "justmetals:items/lithium/dust"
     }
 }
