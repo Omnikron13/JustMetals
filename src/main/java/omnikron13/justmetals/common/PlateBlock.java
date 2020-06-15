@@ -35,6 +35,7 @@ public class PlateBlock extends Block {
     protected static List<Item> ItemBlocks = new ArrayList<Item>();
 
     protected String name;
+    public ItemBlock itemBlock;
 
     public PlateBlock(String name, int mining_level, float hardness, float blast_resistance) {
         super(Material.IRON);
@@ -46,6 +47,8 @@ public class PlateBlock extends Block {
         setHardness(hardness);
         setResistance(blast_resistance);
         setHarvestLevel(TOOL, mining_level);
+        itemBlock = new ItemBlock(this);
+        itemBlock.setRegistryName(getRegistryName());
         Blocks.add(this);
     }
 
@@ -63,10 +66,9 @@ public class PlateBlock extends Block {
     @SubscribeEvent
     public static void registerItemBlocks(Register<Item> event) {
         for (PlateBlock b : Blocks) {
-            Item ib = new ItemBlock(b).setRegistryName(b.getRegistryName());
-            event.getRegistry().register(ib);
-            ItemBlocks.add(ib);
-            OreDictionary.registerOre(TYPE + StringUtils.capitalize(b.name), ib);
+            event.getRegistry().register(b.itemBlock);
+            ItemBlocks.add(b.itemBlock);
+            OreDictionary.registerOre(TYPE + StringUtils.capitalize(b.name), b.itemBlock);
         }
     }
 
