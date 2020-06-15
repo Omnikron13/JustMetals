@@ -18,7 +18,7 @@ import java.util.List;
 
 @EventBusSubscriber
 public class MoltenFluid extends Fluid {
-    protected static List<MoltenFluid> Fluids = new ArrayList<MoltenFluid>();
+    protected static List<MoltenFluid> Fluids = new ArrayList<>();
 
     protected String name;
 

@@ -31,7 +31,7 @@ public class PlateBlock extends Block {
     public static final float BLAST_RESISTANCE = 3f;
     public static final String TOOL = "pickaxe";
 
-    protected static List<PlateBlock> Blocks = new ArrayList<PlateBlock>();
+    protected static List<PlateBlock> Blocks = new ArrayList<>();
     protected static List<ItemBlock> ItemBlocks = new ArrayList<>();
 
     protected String name;

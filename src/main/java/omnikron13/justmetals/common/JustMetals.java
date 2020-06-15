@@ -15,7 +15,7 @@ import java.util.List;
 public final class JustMetals {
     public static final String MODID = "justmetals";
     
-    public static List<Metal> Metals = new ArrayList<Metal>();
+    public static List<Metal> Metals = new ArrayList<>();
     
     @Instance
     public static JustMetals instance;

@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 
 @EventBusSubscriber
 public class IngotItem extends Item {
-    protected static List<IngotItem> Items = new ArrayList<IngotItem>();
+    protected static List<IngotItem> Items = new ArrayList<>();
     
     protected String name;
     

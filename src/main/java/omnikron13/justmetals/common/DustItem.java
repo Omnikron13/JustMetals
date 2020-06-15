@@ -18,7 +18,7 @@ import java.util.List;
 public class DustItem extends Item {
     public static final String TYPE = "dust";
 
-    protected static List<DustItem> Items = new ArrayList<DustItem>();
+    protected static List<DustItem> Items = new ArrayList<>();
 
     protected String name;
 

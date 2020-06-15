@@ -26,7 +26,7 @@ public class MetalBlock extends Block {
     public static final float BLAST_RESISTANCE = 3f;
     public static final String TOOL = "pickaxe";
 
-    protected static List<MetalBlock> Blocks = new ArrayList<MetalBlock>();
+    protected static List<MetalBlock> Blocks = new ArrayList<>();
     protected static List<ItemBlock> ItemBlocks = new ArrayList<>();
 
     protected String name;

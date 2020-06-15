@@ -18,7 +18,7 @@ import java.util.List;
 public class NuggetItem extends Item {
     public static final String TYPE = "nugget";
 
-    protected static List<NuggetItem> Items = new ArrayList<NuggetItem>();
+    protected static List<NuggetItem> Items = new ArrayList<>();
 
     protected String name;
 
