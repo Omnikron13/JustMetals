@@ -76,6 +76,8 @@ dependencies {
 
     // Railcraft API uses this, but also seems useful in general I guess
     compile 'org.jetbrains:annotations:19.0.0'
+
+    compileOnly('org.projectlombok:lombok:1.18.12')
 }
 
 processResources {
