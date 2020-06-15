@@ -27,7 +27,7 @@ public class OreBlock extends Block {
     public static final String TOOL = "pickaxe";
     
     protected static List<OreBlock> Blocks = new ArrayList<OreBlock>();
-    protected static List<Item> ItemBlocks = new ArrayList<Item>();
+    protected static List<ItemBlock> ItemBlocks = new ArrayList<>();
     
     protected String name;
     public ItemBlock itemBlock;
@@ -65,9 +65,9 @@ public class OreBlock extends Block {
     
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
-        for(Item i : ItemBlocks) {
-            ModelResourceLocation mrl = new ModelResourceLocation(i.getRegistryName(), "inventory");
-            ModelLoader.setCustomModelResourceLocation(i, 0, mrl);
+        for(OreBlock b : Blocks) {
+            ModelResourceLocation mrl = new ModelResourceLocation(JustMetals.MODID + ":" + b.name + "/" + TYPE, "inventory");
+            ModelLoader.setCustomModelResourceLocation(b.itemBlock, 0, mrl);
         }
     }
     
