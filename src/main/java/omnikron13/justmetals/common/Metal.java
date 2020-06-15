@@ -1,5 +1,6 @@
 package omnikron13.justmetals.common;
 
+import mods.railcraft.api.crafting.Crafters;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
@@ -46,6 +47,15 @@ public class Metal {
     public void registerSmeltingRecipes() {
         GameRegistry.addSmelting(ore, new ItemStack(ingot, 1), smeltingXP);
         GameRegistry.addSmelting(dust, new ItemStack(ingot, 1), smeltingXP);
+    }
+
+    public void addRollingMachineRecipes() {
+        // 4 ingots -> 4 plates
+        Crafters.rollingMachine().newRecipe(new ItemStack(plate, 4)).shaped(
+                "II",
+                "II",
+                'I', "ingot" + StringUtils.capitalize(name)
+        );
     }
 
     protected void addRecipes() {
