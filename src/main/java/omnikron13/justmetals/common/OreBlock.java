@@ -19,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: create base/abstract class for this, along with MetalBlock & PlateBlock
 @EventBusSubscriber
 public class OreBlock extends Block {
     public static final String TYPE = "ore";
