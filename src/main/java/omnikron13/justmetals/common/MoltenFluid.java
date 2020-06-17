@@ -13,12 +13,12 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @EventBusSubscriber
 public class MoltenFluid extends Fluid {
-    protected static List<MoltenFluid> Fluids = new ArrayList<>();
+    protected static List<MoltenFluid> Fluids = new LinkedList<>();
 
     protected String name;
 
