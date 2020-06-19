@@ -29,7 +29,6 @@ public class MoltenFluid extends Fluid {
             new ResourceLocation(JustMetals.MODID, "fluids/" + name + "/flowing")
         );
         this.name = name;
-        setColor(0xFFFFFFFF);
         setGaseous(false);
         setTemperature(temperature);
         setDensity(density);
