@@ -2,17 +2,17 @@
 name: tungsten
 mining_level: 3
 ore:
-  hardness: 3
-  blast_resistance: 3
-  smelting_xp: 2
+    hardness: 3
+    blast_resistance: 3
+    smelting_xp: 2
 block:
-  hardness: 3
-  blast_resistance: 3
+    hardness: 3
+    blast_resistance: 3
 plate:
-  hardness: 3
-  blast_resistance: 3
+    hardness: 3
+    blast_resistance: 3
 molten:
-  temperature: 3695
-  density: 17600
-  viscosity: 2500
+    temperature: 3695
+    density: 17600
+    viscosity: 2500
 ...
