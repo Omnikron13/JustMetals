@@ -78,7 +78,7 @@ dependencies {
     // Railcraft API uses this, but also seems useful in general I guess
     compile 'org.jetbrains:annotations:19.0.0'
 
-    compileOnly('org.projectlombok:lombok:1.18.12')
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
 
     compile group: 'com.amihaiemil.web', name: 'eo-yaml', version: '5.1.0'
 
