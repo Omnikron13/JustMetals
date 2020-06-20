@@ -1,5 +1,7 @@
 package omnikron13.justmetals.common;
 
+import com.amihaiemil.eoyaml.Yaml;
+import com.amihaiemil.eoyaml.YamlMapping;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -7,6 +9,8 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,10 +29,25 @@ public final class JustMetals {
     }
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        // TODO: Work out proper viscosity
-        Metals.add(new Metal("lithium", 1, 1, 545, 512, 1500));
-        Metals.add(new Metal("tungsten", 3, 2, 3695, 17600, 2500));
+    public void preInit(FMLPreInitializationEvent event) throws IOException {
+        Config.preInit(event);
+
+        // Initialise metals
+        for(File f : Config.getMetalsDir().toFile().listFiles()) {
+            YamlMapping metal = Yaml.createYamlInput(f, true).readYamlMapping();
+            YamlMapping ore = metal.yamlMapping("ore");
+            YamlMapping block = metal.yamlMapping("block");
+            YamlMapping plate = metal.yamlMapping("plate");
+            YamlMapping molten = metal.yamlMapping("molten");
+            Metals.add(new Metal(
+                metal.string("name"),
+                metal.integer("mining_level"),
+                ore.integer("smelting_xp"),
+                molten.integer("temperature"),
+                molten.integer("density"),
+                molten.integer("viscosity")
+            ));
+        }
     }
     
     @Mod.EventHandler
