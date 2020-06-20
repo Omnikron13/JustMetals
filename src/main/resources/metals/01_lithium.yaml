@@ -1,0 +1,18 @@
+---
+name: lithium
+mining_level: 1
+ore:
+    hardness: 3
+    blast_resistance: 3
+    smelting_xp: 1
+block:
+    hardness: 3
+    blast_resistance: 3
+plate:
+    hardness: 3
+    blast_resistance: 3
+molten:
+    temperature: 545
+    density: 512
+    viscosity: 1500
+...
