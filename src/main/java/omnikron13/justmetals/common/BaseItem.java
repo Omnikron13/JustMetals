@@ -32,7 +32,7 @@ public abstract class BaseItem extends Item {
     public BaseItem(String name) {
         this.name = name;
         oreDict = TYPE() + StringUtils.capitalize(name);
-        setUnlocalizedName(TYPE() + "." + name);
+        setTranslationKey(TYPE() + "." + name);
         setRegistryName(TYPE() + "." + name);
         Items.add(this);
     }

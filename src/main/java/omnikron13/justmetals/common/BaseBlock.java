@@ -39,7 +39,7 @@ public abstract class BaseBlock extends Block {
         this.name = name;
         oreDict = TYPE() + StringUtils.capitalize(name);
         setRegistryName(TYPE() + "." + name);
-        setUnlocalizedName(TYPE() + "." + name);
+        setTranslationKey(TYPE() + "." + name);
         setHarvestLevel("pickaxe", mining_level);
         itemBlock = new ItemBlock(this);
         itemBlock.setRegistryName(getRegistryName());

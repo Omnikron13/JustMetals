@@ -21,7 +21,7 @@ public class OreBlock extends BaseBlock {
 
     // This is necessary to do the base rock + ore texture thing
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 }
