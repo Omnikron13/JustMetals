@@ -7,6 +7,10 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
+plugins {
+    id "java"
+    id "com.github.johnrengelman.shadow" version "4.0.4"
+}
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
@@ -82,3 +86,25 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+
+// Make 'fat' jar
+shadowJar {
+    configurations = [project.configurations.compile]
+    dependencies {
+        exclude(dependency("mezz:jei"))
+        exclude(dependency("org.projectlombok:lombok"))
+        exclude(dependency("org.jetbrains:annotations"))
+        exclude(dependency("org.intellij.lang:annotations"))
+    }
+}
+artifacts {
+    archives shadowJar
+}
+reobf {
+    shadowJar {
+        mappingType = "SEARGE"
+    }
+}
+tasks.reobfShadowJar.mustRunAfter shadowJar
+tasks.build.dependsOn shadowJar
+tasks.build.dependsOn reobfShadowJar
