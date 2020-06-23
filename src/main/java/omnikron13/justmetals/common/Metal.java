@@ -7,6 +7,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -50,6 +51,8 @@ public class Metal {
     }
 
     public void addRollingMachineRecipes() {
+        if(!Loader.isModLoaded("railcraft"))
+            return;
         // 4 ingots -> 4 plates
         Crafters.rollingMachine().newRecipe(new ItemStack(plate, 4)).shaped(
                 "II",
